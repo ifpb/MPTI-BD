@@ -4,6 +4,11 @@
 * Damires Souza
 * Diego Pessoa
 
+## Links
+* [Exemplos apresentados em sala de aula](./exemplos/)
+* [Respostas de Atividades](./atividades/)
+
+
 ## Objetivos
 Conhecer os conceitos e demandas relacionados ao gerenciamento de dados em diversos cenários e
 aplicações; identificar desafios para pesquisa e inovação em gerenciamento de dados por meio da discussão
