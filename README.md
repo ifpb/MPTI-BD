@@ -5,8 +5,8 @@
 * Diego Pessoa
 
 ## Links
-* [Exemplos apresentados em sala de aula](./exemplos/)
-* [Respostas de atividades](./atividades/)
+* [Exemplos apresentados em sala de aula](https://github.com/ifpb/MPTI-BD/tree/main/exemplos)
+* [Respostas de atividades](https://github.com/ifpb/MPTI-BD/tree/main/atividades)
 
 
 ## Objetivos
