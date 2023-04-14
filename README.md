@@ -6,7 +6,7 @@
 
 ## Links
 * [Exemplos apresentados em sala de aula](./exemplos/)
-* [Respostas de Atividades](./atividades/)
+* [Respostas de atividades](./atividades/)
 
 
 ## Objetivos
