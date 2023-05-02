@@ -7,7 +7,7 @@
 
 ## 1. Agrupar resultados usando $group:
 ### a. Mostrar séries por nota
-```json
+```js
     db.series.aggregate([{
         $group: {
             _id: {
@@ -20,7 +20,7 @@
 ```
 
 ### b. Mostrar média de rating das séries
-```json
+```js
     db.series.aggregate([{
         $group: {
             _id: null,
@@ -32,7 +32,7 @@
 
 ## 2. Usando $unwind
 ### a. Mostrar séries por gênero
-```json
+```js
     db.series.aggregate([
         {
             $unwind: "$generos"
@@ -47,7 +47,7 @@
 ```
 
 ### b. Obtendo todos os atores de todas as séries
-```json
+```js
     db.series.aggregate([
         {
             $unwind: "$atores"
@@ -63,7 +63,7 @@
 
 ## 3. Filtrar usando $match
 ### a. Mostrar séries com nota maior que 4.7
-```json
+```js
     db.series.aggregate([{
         $group: {
             _id: {
@@ -81,7 +81,7 @@
     ])
 ```
 ###  b. Filtrar séries de drama
-```json
+```js
     db.series.aggregate([
         {
             $unwind: "$generos"
@@ -101,7 +101,7 @@
     ])
 ```
 ### c. agrupar personagens de atores com participação em mais de uma série
-```json
+```js
     db.series.aggregate([
         {
             $unwind: "$atores"
@@ -127,7 +127,7 @@
 ---
 ## 4. Usando $sort
 ### a. Mostrar séries por nota, em ordem decrescente
-```json
+```js
     db.series.aggregate([
         {
             $group: {
@@ -147,7 +147,7 @@
 ```
 
 ### b. Mostrar séries por gênero, em ordem alfabética
-```json
+```js
     db.series.aggregate([
         {
             $unwind: "$generos"
@@ -169,7 +169,7 @@
 ---
 ## 5. Transformar dados usando $project
 ### a. Retornar apenas nome e avaliação das séries de drama
-```json
+```js
     db.series.aggregate([
         {
             $match: {
@@ -188,7 +188,7 @@
 ---
 
 ## 6. Juntando coleções usando $lookup
-```json
+```js
     db.noticias.aggregate([
         {
             $lookup: {
@@ -204,7 +204,7 @@
 
 ## 7. Usando $arrayElementAt
 ### a. Obter a referência de série numa notícia como objeto ao invés de lista, retornando apenas nome, rating e generos 
-```json
+```js
     db.noticias.aggregate([
         {
             $lookup: {
