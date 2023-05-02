@@ -7,6 +7,7 @@
 
 ## 1. Agrupar resultados usando $group:
 ### a. Mostrar séries por nota
+```json
     db.series.aggregate([{
         $group: {
             _id: {
@@ -16,20 +17,22 @@
             series: { $push: "$nome" }
         }
     }]);
+```
 
 ### b. Mostrar média de rating das séries
+```json
     db.series.aggregate([{
         $group: {
             _id: null,
             media: { $avg: "$rating" }
         }
     }]);
-
+```
 ---
 
 ## 2. Usando $unwind
 ### a. Mostrar séries por gênero
-
+```json
     db.series.aggregate([
         {
             $unwind: "$generos"
@@ -41,8 +44,10 @@
             series: { $push: "$nome" }
         }
     }]);
+```
 
 ### b. Obtendo todos os atores de todas as séries
+```json
     db.series.aggregate([
         {
             $unwind: "$atores"
@@ -53,12 +58,12 @@
             }
         }
     ])
-
+```
 ---
 
 ## 3. Filtrar usando $match
 ### a. Mostrar séries com nota maior que 4.7
-
+```json
     db.series.aggregate([{
         $group: {
             _id: {
@@ -74,8 +79,9 @@
         }
     }
     ])
-
+```
 ###  b. Filtrar séries de drama
+```json
     db.series.aggregate([
         {
             $unwind: "$generos"
@@ -93,7 +99,9 @@
             }
         }
     ])
+```
 ### c. agrupar personagens de atores com participação em mais de uma série
+```json
     db.series.aggregate([
         {
             $unwind: "$atores"
@@ -115,9 +123,11 @@
             }
         }
     ])
+```
 ---
 ## 4. Usando $sort
 ### a. Mostrar séries por nota, em ordem decrescente
+```json
     db.series.aggregate([
         {
             $group: {
@@ -134,8 +144,10 @@
             }
         }
     ])
+```
 
 ### b. Mostrar séries por gênero, em ordem alfabética
+```json
     db.series.aggregate([
         {
             $unwind: "$generos"
@@ -153,9 +165,11 @@
             }
         }
     ])
+```
 ---
 ## 5. Transformar dados usando $project
 ### a. Retornar apenas nome e avaliação das séries de drama
+```json
     db.series.aggregate([
         {
             $match: {
@@ -170,9 +184,11 @@
             }
         }
     ])
+```
 ---
 
 ## 6. Juntando coleções usando $lookup
+```json
     db.noticias.aggregate([
         {
             $lookup: {
@@ -183,10 +199,12 @@
             }
         }
     ])
+```
 ---
 
 ## 7. Usando $arrayElementAt
 ### a. Obter a referência de série numa notícia como objeto ao invés de lista, retornando apenas nome, rating e generos 
+```json
     db.noticias.aggregate([
         {
             $lookup: {
@@ -214,3 +232,4 @@
             }
         }
     ])
+```
