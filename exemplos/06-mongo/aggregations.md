@@ -6,7 +6,9 @@
 
 
 ## 1. Agrupar resultados usando $group:
-### a. Mostrar séries por nota
+### a. Mostrar séries por nota (exibir nome da série e a nota de cada uma)
+<details><summary>Resposta</summary>
+
 ```js
     db.series.aggregate([{
         $group: {
@@ -18,8 +20,11 @@
         }
     }]);
 ```
+</details>
 
-### b. Mostrar média de rating das séries
+### b. Mostrar rating (nota) média de todas as séries cadastradas
+<details><summary>Resposta</summary>
+
 ```js
     db.series.aggregate([{
         $group: {
@@ -28,10 +33,13 @@
         }
     }]);
 ```
+</details>
 ---
 
-## 2. Usando $unwind
-### a. Mostrar séries por gênero
+## 2. Usando $group juntamente com $unwind
+### a. Mostrar todos os gêneros cadastrados e séries correspondentes
+<details><summary>Resposta</summary>
+
 ```js
     db.series.aggregate([
         {
@@ -45,8 +53,11 @@
         }
     }]);
 ```
+</details>
 
-### b. Obtendo todos os atores de todas as séries
+### b. Listar nomes e personagens de todos os atores das séries cadastradas
+<details><summary>Resposta</summary>
+
 ```js
     db.series.aggregate([
         {
@@ -59,10 +70,13 @@
         }
     ])
 ```
+</details>
 ---
 
-## 3. Filtrar usando $match
-### a. Mostrar séries com nota maior que 4.7
+## 3. Filtrando resultados usando $match
+### a. Mostrar séries por notas e exibir apenas as com nota maior que 4.7
+<details><summary>Resposta</summary>
+
 ```js
     db.series.aggregate([{
         $group: {
@@ -80,7 +94,11 @@
     }
     ])
 ```
-###  b. Filtrar séries de drama
+</details>
+
+###  b. Mostrar apenas as séries do gênero drama
+<details><summary>Resposta</summary>
+
 ```js
     db.series.aggregate([
         {
@@ -100,7 +118,11 @@
         }
     ])
 ```
-### c. agrupar personagens de atores com participação em mais de uma série
+</details>
+
+### c. Mostrar nomes dos personagens de atores com participação em mais de uma série
+<details><summary>Resposta</summary>
+
 ```js
     db.series.aggregate([
         {
@@ -124,9 +146,13 @@
         }
     ])
 ```
+</details>
+
 ---
 ## 4. Usando $sort
 ### a. Mostrar séries por nota, em ordem decrescente
+<details><summary>Resposta</summary>
+
 ```js
     db.series.aggregate([
         {
@@ -145,8 +171,11 @@
         }
     ])
 ```
+</details>
 
-### b. Mostrar séries por gênero, em ordem alfabética
+### b. Mostrar lista de gêneros e cada série associada, em ordem alfabética
+<details><summary>Resposta</summary>
+
 ```js
     db.series.aggregate([
         {
@@ -166,9 +195,13 @@
         }
     ])
 ```
+</details>
+
 ---
-## 5. Transformar dados usando $project
+## 5. Transformando retorno usando projeção ($project)
 ### a. Retornar apenas nome e avaliação das séries de drama
+<details><summary>Resposta</summary>
+
 ```js
     db.series.aggregate([
         {
@@ -185,9 +218,13 @@
         }
     ])
 ```
+</details>
 ---
 
 ## 6. Juntando coleções usando $lookup
+### a. Exibir todas as notícias e os dados das séries associadas a cada notícia
+<details><summary>Resposta</summary>
+
 ```js
     db.noticias.aggregate([
         {
@@ -200,10 +237,13 @@
         }
     ])
 ```
+</details>
 ---
 
 ## 7. Usando $arrayElementAt
 ### a. Obter a referência de série numa notícia como objeto ao invés de lista, retornando apenas nome, rating e generos 
+<details><summary>Resposta</summary>
+
 ```js
     db.noticias.aggregate([
         {
@@ -233,3 +273,4 @@
         }
     ])
 ```
+</details>
