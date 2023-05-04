@@ -71,6 +71,7 @@
     ])
 ```
 </details>
+
 ---
 
 ## 3. Filtrando resultados usando $match
@@ -219,6 +220,7 @@
     ])
 ```
 </details>
+
 ---
 
 ## 6. Juntando coleções usando $lookup
@@ -238,6 +240,7 @@
     ])
 ```
 </details>
+
 ---
 
 ## 7. Usando $arrayElementAt
@@ -274,6 +277,8 @@
     ])
 ```
 </details>
+
+---
 
 ## 8. Fazendo busca textual usando $text
 ### a. Buscar notícias que contenham a palavra "Netflix"
@@ -345,6 +350,7 @@ db.series.aggregate([
 </details>
 
 ---
+
 ## 10. Usando $bucket
 ### b. Agrupar séries por rating e gênero
 
