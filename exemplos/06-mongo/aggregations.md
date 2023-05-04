@@ -353,7 +353,7 @@ db.series.aggregate([
 ---
 
 ## 10. Usando $bucket
-### b. Agrupar séries por rating e gênero
+### a. Agrupar séries por rating e gênero
 
 <details><summary>Resposta</summary>
 
