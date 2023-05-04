@@ -1,8 +1,8 @@
 # Exemplos usando Aggregations no MongoDB
 
 ## Conjuntos de dados
-* Séries
-* Notícias
+* [Séries](https://raw.githubusercontent.com/ifpb/MPTI-BD/main/exemplos/06-mongo/series.json)
+* [Notícias](https://raw.githubusercontent.com/ifpb/MPTI-BD/main/exemplos/06-mongo/noticias.json)
 
 
 ## 1. Agrupar resultados usando $group:
