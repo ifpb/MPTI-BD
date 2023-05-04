@@ -34,6 +34,7 @@
     }]);
 ```
 </details>
+
 ---
 
 ## 2. Usando $group juntamente com $unwind
